@@ -9,9 +9,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var tapCount = 0
+
     var body: some View {
-        Text("Hello, World!")
-            .foregroundColor(.yellow)
+        VStack(spacing: 20) {
+            Text("You have tapped \(tapCount) \(tapCount == 1 ? "time" : "times")")
+                .foregroundColor(.yellow)
+
+            Button("Tap Me!") {
+                tapCount += 1
+            }
+        }
     }
 }
 
